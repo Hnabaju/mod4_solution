@@ -30,66 +30,21 @@ WARNING!!! WARNING!!!
 */
 
 // STEP 1:
+// Wrap the entire contents of script.js inside of an IIFE
 // See Lecture 52, part 2
 // (Note, Step 2 will be done in the SpeakHello.js file.)
+
+(funtion() {
+
 var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
-var a = function (name) {
-  console.log("Hello " + "Yaakov")
-}
-a();
 
-var a = function (name) {
-  console.log("Goodbye " + "John")
-}
-a();
-var a = function (name) {
-  console.log("Goodbye " + "Jen")
-}
-a();
-
-var a = function (name) {
-  console.log("Goodbye " + "Jason")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Paul")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Frank")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Larry")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Paula")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Laura")
-}
-a();
-var a = function (name) {
-  console.log("Goodbye " + "Jim")
-}
-a();
-
-
-  //STEP 10:
+// STEP 10:
 // Loop over the names array and say either 'Hello' or "Good Bye"
 // using either the helloSpeaker's or byeSpeaker's 'speak' method.
 // See Lecture 50, part 1
-//for (/* fill in parts of the 'for' loop to loop over names array */) {
 
+for ( var   i = 0; i < names.length; i++) {
 
-(function() {
-
-  var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
-   
- 
-  
   // STEP 11:
   // Retrieve the first letter of the current name in the loop.
   // Use the string object's 'charAt' function. Since we are looking for
@@ -97,20 +52,19 @@ a();
   // string object's 'toLowerCase' method on the result so we can compare
   // to lower case character 'j' afterwards.
   // Look up these methods on Mozilla Developer Network web site if needed.
-  
-  for (var i = 0; i < names.length; i++) {
-    var firstLetter = names[i].charAt(0).toLowercase(i);
 
+  var firstLetter = names[i].charAt(0).tolowerCase();
 
   // STEP 12:
   // Compare the 'firstLetter' retrieved in STEP 11 to lower case
   // 'j'. If the same, call byeSpeaker's 'speak' method with the current name
-  // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current/// name in the loop.
-
+  // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
+  // name in the loop.
   if (firstLetter === 'j') {
-    byeSpeaker.speak(names[i]);
+    byeSpeaker.speaK(names[i]);
   } else {
-    helloSpeaker.speak(names[i]);
+     helloSpeaker.speaK(names[i]);
   }
 }
+
 })();

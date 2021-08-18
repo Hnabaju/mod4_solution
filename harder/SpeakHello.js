@@ -1,77 +1,33 @@
 // STEP 2: Wrap the entire contents of SpeakHello.js inside of an IIFE
 // See Lecture 52, part 2
 (function(){
-  var a = function (name) {
-  console.log("Hello " + "Yaakov")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Paul")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Frank")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Larry")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Paula")
-}
-a();
-var a = function (name) {
-  console.log("Hello " + "Laura")
-}
-a();
-
- console.log("SpeakHello");
-})();
+  var helloSpeaker = {};
 
 // STEP 3: Create an object, called 'helloSpeaker' to which you will attach
 // the "speak" method and which you will expose to the global context
 // See Lecture 52, part 1
 
 
-var helloSpeaker = {};
-helloSpeaker = "speaker";
-var greeting = "Hello ";
-helloSpeaker.Speak = function(){
-}
-console.log (greeting + helloSpeaker);
+helloSpeaker.names = "Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim";
+var speakWord = "hello"
 
 // DO NOT attach the speakWord variable to the 'helloSpeaker' object.
-var speakWord = "Hello";
+//var speakWord = "Hello";
 
 // STEP 4: Rewrite the 'speak' function such that it is attached to the
 // helloSpeaker object instead of being a standalone function.
 // See Lecture 52, part 2
 
-(function speak(name) { 
-helloSpeaker.name = "speaker";
-var greeting = "Hello ";
-helloSpeaker.speak = function(){
-};
-console.log(speakWord + " " + name);
-})(helloSpeaker);
- 
+helloSpeaker.speak =function (name) {
+  console.log(speakWord + " " + name);
+}
 
 // STEP 5: Expose the 'helloSpeaker' object to the global scope. Name it
 // 'helloSpeaker' on the global scope as well.
 // See Lecture 52, part 2
-
-(function (window) {
-  var helloSpeaker = new Object();
-  helloSpeaker.names = "Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim";
-  var greeting = "Hello ";
-  helloSpeaker.Speak = function(name){
-   console.log (greeting + helloSpeaker.name);
-}
-window.helloSpeaker = helloSpeaker
-
-})(window);
-
-
 // (Note, Step 6 will be done in the SpeakGoodBye.js file.)
 // xxxx.xxxx = helloSpeaker;
+
+window.helloSpeaker = helloSpeaker;
+
+})();
